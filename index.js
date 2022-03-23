@@ -11,9 +11,10 @@ const app = express()
 app.use(cors())
 app.use(bodyparser.json())
 
-app.use("/api/employee-manage" , require("./routes/employee-manage"))
+app.use("/api/employee-manage", require("./routes/employee-manage"))
+app.use("/api/project-manage", require("./routes/project-manage"))
 
-const startApp = async () => {
+const startApp = async() => {
     try {
         await connect(DB);
         success({
@@ -23,7 +24,7 @@ const startApp = async () => {
 
         app.listen(PORT, () => success({ message: `Server started on PORT ${PORT}`, badge: true }))
     } catch (err) {
-        
+
         error({
             message: `Unable to connect with the Database ${DB}`,
             badge: true
