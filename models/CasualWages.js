@@ -1,42 +1,50 @@
 const mongoose = require("mongoose");
 
-const PurchasePayableSchema = new mongoose.Schema({
+const CasualWagesSchema = new mongoose.Schema({
+
+    Project_id:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:""
+    },
    
-    Date:{
-        type:Date,
-        required:true
-    },
-    Description:{
-        type:String,
-        required:true,
-    
-    },
-    ChqNo:{
-        type:Number,
-        required:true,
-        
-    },
-    Amount:{
+    Basic_Salary:{
         type:Float32Array,
         required:true
     },
 
-    invoice_no:{
+    OT:{
+        type:Float32Array,
+        required:true
+    },
+
+    Leaves:{
+        type:Float32Array,
+        required:true
+    },
+
+    Net_Salary:{
+        type:Float32Array,
+        required:true
+    },
+
+    
+    Emp_Acc_id:{
         type:mongoose.Schema.Types.ObjectId,
         ref:""
     },
+    
 
     Acc_id:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"JournalAccounts"
     },
-    
+
+
     Transaction_id:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"MainCashSchema"
     },
     
-  
 })
 
-module.exports = mongoose.model('PurchasePayable' ,PurchasePayablegSchema )
+module.exports = mongoose.model('CasualWages' ,CasualWagesSchema )
