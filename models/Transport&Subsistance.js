@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PurchaseSchema = new mongoose.Schema({
+const Transport_SubsistanceSchema = new mongoose.Schema({
    
     Date:{
         type:Date,
@@ -21,7 +21,7 @@ const PurchaseSchema = new mongoose.Schema({
         required:true
     },
 
-    invoice_no:{
+    Fuel_id:{
         type:mongoose.Schema.Types.ObjectId,
         ref:""
     },
@@ -36,7 +36,6 @@ const PurchaseSchema = new mongoose.Schema({
         ref:"MainCashSchema"
     },
     
-  
 })
 
-module.exports = mongoose.model('Purchase' ,PurchaseSchema )
+module.exports = mongoose.model('Transport_Subsistance' ,Transport_SubsistanceSchema )
