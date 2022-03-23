@@ -8,6 +8,11 @@ const { DB, PORT } = require('./config')
 
 const app = express()
 
+app.use(cors())
+app.use(bodyparser.json())
+
+app.use("/api/employee-manage" , require("./routes/employee-manage"))
+
 const startApp = async () => {
     try {
         await connect(DB);
