@@ -1,33 +1,18 @@
 const mongoose = require("mongoose");
 
-const ItemSchema = new mongoose.Schema({
+const Project_issue_itemSchema = new mongoose.Schema({
     
-    item_name:{
-        type:String,
-        required:true
-    },
-    item_category:{
+    item:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Category"
+        ref:"Item",
+        required:"true"
     },
-    quantity:{
-        type:String,
-        required:true,
-        unique:true
+    issue:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Project_issue",
+        required:"true"
     },
-    reorder_level:{
-        type:String,
-        required:true
-    },
-    sup_id:{
-        type:String,
-        required:true,
-    },
-    // invoice_no:{
-    //     type:,
-    //     required:true,
-    // },
    
 })
 
-module.exports = mongoose.model("Item" , ItemSchema)
+module.exports = mongoose.model("Project_issue_item" , Project_issue_itemSchema)
