@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 
 
 const EmployeeSchema = new mongoose.Schema({
-    _id:{
-        type:String
-    },
+
 
     veh_type:{
         type:String,
