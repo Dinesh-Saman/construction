@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+=======
+const mongoose = require("mongoose");
+>>>>>>> 825f6c697bd0199b30674c6e8aec1f373533e4bc
 
 
+<<<<<<< HEAD
 
 const mongoose = require("mongoose");
 const PurchaseSchema = new mongoose.Schema({
@@ -44,3 +49,23 @@ const PurchaseSchema = new mongoose.Schema({
 
 module.exports=mongoose.model("Purchase",PurchaseSchema)
 
+=======
+    invoice_no:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:""
+    },
+
+    Acc_id:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"JournalAccounts"
+    },
+    
+    Transaction_id:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"MainCashSchema"
+    },
+    
+})
+
+module.exports = mongoose.model('Purchase' ,PurchaseSchema )
+>>>>>>> 825f6c697bd0199b30674c6e8aec1f373533e4bc
