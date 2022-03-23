@@ -40,4 +40,6 @@ const PurchaseSchema = new mongoose.Schema({
         required:true,
     },
     
+  
 })
+module.exports=mongoose.model("Purchase",PurchaseSchema)
