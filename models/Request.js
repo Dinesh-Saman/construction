@@ -9,11 +9,7 @@ const RequestSchema = new mongoose.Schema({
         required:true,
     },
     
-    Item_name:{
-        type:String,
-        required:true
-    },
-    
+   
     quantity:{
         type:Number,
         required:true,
