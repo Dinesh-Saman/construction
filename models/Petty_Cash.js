@@ -1,43 +1,40 @@
-
 const mongoose = require("mongoose");
-const PurchaseSchema = new mongoose.Schema({
-    
-    
 
-    invoice_date:{
+const PettyCashSchema = new mongoose.Schema({
+   
+    Date:{
         type:Date,
         required:true
     },
-
-    item_name:{
+    Description:{
         type:String,
         required:true,
+    
     },
-
-    unit_price:{
-        type:Float32Array,
-        required:true,
-    },
-
-    quantity:{
+    ChqNo:{
         type:Number,
         required:true,
+        
     },
-
-    total_amount:{
+    Debits:{
+        type:Float32Array,
+        required:true
+    },
+    Credits:{
         type:Float32Array,
         required:true,
     },
-     
-    supplier:{
+
+    Acc_id:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Supplier",
-        required:true,
+        ref:"JournalAccounts"
     },
-    item:{
+    
+    Transaction_id:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Item",
-        required:true,
+        ref:"MainCashSchema"
     },
     
 })
+
+module.exports = mongoose.model('PettyCash' ,PettyCashSchema )
