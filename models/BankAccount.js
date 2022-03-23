@@ -21,3 +21,5 @@ const BankAccountSchema = new mongoose.Schema({
     },
  
 })
+
+module.exports=mongoose.model('BankAccount',BankAccountSchema)

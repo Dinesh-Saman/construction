@@ -21,3 +21,5 @@ const DepartmentSchema = new mongoose.Schema({
    
     
 })
+
+module.exports=mongoose.model('Department',DepartmentSchema)

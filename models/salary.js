@@ -1,60 +1,36 @@
 const mongoose = require("mongoose");
 
-const EmployeeSchema = new mongoose.Schema({
+const salarySchema = new mongoose.Schema({
 
     amount:{
         type:Float32Array,
         required:true
     },
     annual:{
-        type:String,
-        required:true,
-        unique:true
-    },
-    emp_email:{
-        type:String,
-        required:true,
-        unique:true
-    },
-    emp_photo:{
-        type:String,
+        type:Float32Array,
         required:true
     },
-    emp_address:{
-        type:String,
-        required:true,
-    },
-    emp_dob:{
-        type:Date,
-        required:true,
-    },
-    emp_gender:{
-        type:String,
-        enum:["MALE" , "FEMALE"],
-    },
-    emp_nic:{
-        type:String,
-        unique:true,
+    bonus:{
+        type:Float32Array,
         required:true
     },
-    emp_epf_no:{
-        type:String,
-        unique:true,
+    OT:{
+        type:Float32Array,
         required:true
     },
-    emp_join_date:{
-        type:Date,
-        require:true,
-    },
-    emp_cv:{
-        type:String,
+    gratuity:{
+        type:Float32Array,
         required:true,
     },
-    emp_type:{
-        type:String,
-        enum:["PERMANENT"],
-        required:true
+    remittance:{
+        type:Float32Array,
+        required:true,
     },
-    
-    
+    dept_id:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Department"
+    }
 })
+
+module.exports=mongoose.model('salary',salarySchema)
+

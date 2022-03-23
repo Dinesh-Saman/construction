@@ -1,9 +1,6 @@
 const mongoose = require("mongoose");
 
 const EmployeeSchema = new mongoose.Schema({
-    _id:{
-        type:String
-    },
 
     emp_name:{
         type:String,
@@ -55,9 +52,19 @@ const EmployeeSchema = new mongoose.Schema({
     },
     emp_type:{
         type:String,
-        enum:["PERMANENT"],
+        enum:["PERMANENT","tempory"],
         required:true
+    },
+    dept_id:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Department"
+    },
+    emp_account_id:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"BankAccount"
     },
     
     
 })
+
+module.exports=mongoose.model('Employee',EmployeeSchema)
