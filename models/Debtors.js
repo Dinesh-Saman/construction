@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PurchasePayableSchema = new mongoose.Schema({
+const DebtorsSchema = new mongoose.Schema({
    
     Date:{
         type:Date,
@@ -16,14 +16,19 @@ const PurchasePayableSchema = new mongoose.Schema({
         required:true,
         
     },
-    Amount:{
+    Debits:{
         type:Float32Array,
         required:true
     },
 
-    invoice_no:{
+    Credits:{
+        type:Float32Array,
+        required:true
+    },
+
+    Project_id:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:""
+        ref:"ProjectSchema"
     },
 
     Acc_id:{
@@ -36,7 +41,6 @@ const PurchasePayableSchema = new mongoose.Schema({
         ref:"MainCashSchema"
     },
     
-  
 })
 
-module.exports = mongoose.model('PurchasePayable' ,PurchasePayablegSchema )
+module.exports = mongoose.model('Debtors' ,DebtorsSchema )

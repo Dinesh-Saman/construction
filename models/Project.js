@@ -25,7 +25,6 @@ const ProjectSchema = new mongoose.Schema({
     client_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "//table name",
-        required: true
     },
 
 

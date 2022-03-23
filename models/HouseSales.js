@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PurchasePayableSchema = new mongoose.Schema({
+const HouseSalesSchema = new mongoose.Schema({
    
     Date:{
         type:Date,
@@ -21,9 +21,9 @@ const PurchasePayableSchema = new mongoose.Schema({
         required:true
     },
 
-    invoice_no:{
+    Project_id:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:""
+        ref:"ProjectSchema"
     },
 
     Acc_id:{
@@ -36,7 +36,6 @@ const PurchasePayableSchema = new mongoose.Schema({
         ref:"MainCashSchema"
     },
     
-  
 })
 
-module.exports = mongoose.model('PurchasePayable' ,PurchasePayablegSchema )
+module.exports = mongoose.model('HouseSales' ,HouseSalesSchema )
