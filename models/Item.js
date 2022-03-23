@@ -20,13 +20,19 @@ const ItemSchema = new mongoose.Schema({
         required:true
     },
     sup_id:{
-        type:String,
+        
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Supplier",
         required:true,
     },
-    // invoice_no:{
-    //     type:,
-    //     required:true,
-    // },
+
+    invoice_no:{
+        
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Purchase",
+        required:true,
+    },
+    
    
 })
 
