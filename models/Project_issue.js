@@ -18,7 +18,7 @@ const Project_issueSchema = new mongoose.Schema({
     },
     receive_status:{
         type:String,
-        required:true
+        enum: ["yes", "No"],
     },
     receive_date:{
         type:Number,
