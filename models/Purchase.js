@@ -8,7 +8,7 @@ const PurchaseSchema = new mongoose.Schema({
     },
 
     unit_price: {
-        type: Float32Array,
+        type: Number,
         required: true,
     },
 
@@ -18,7 +18,7 @@ const PurchaseSchema = new mongoose.Schema({
     },
 
     total_amount: {
-        type: Float32Array,
+        type: Number,
         required: true,
     },
 
