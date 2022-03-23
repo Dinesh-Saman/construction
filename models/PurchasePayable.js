@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PurchaseSchema = new mongoose.Schema({
+const PurchasePayableSchema = new mongoose.Schema({
    
     Date:{
         type:Date,
@@ -38,4 +38,4 @@ const PurchaseSchema = new mongoose.Schema({
     
 })
 
-module.exports = mongoose.model('Purchase' ,PurchaseSchema )
+module.exports = mongoose.model('PurchasePayable' ,PurchasePayableSchema )
