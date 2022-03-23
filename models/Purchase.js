@@ -1,4 +1,6 @@
 
+
+
 const mongoose = require("mongoose");
 const PurchaseSchema = new mongoose.Schema({
     
@@ -7,11 +9,7 @@ const PurchaseSchema = new mongoose.Schema({
         type:Date,
         required:true
     },
-    item_name:{
-        type:String,
-        required:true,
-    },
-
+    
     unit_price:{
         type:Float32Array,
         required:true,
@@ -39,9 +37,10 @@ const PurchaseSchema = new mongoose.Schema({
         required:true,
     },
 
-    
-      
+   
     
 })
 
+
 module.exports=mongoose.model("Purchase",PurchaseSchema)
+

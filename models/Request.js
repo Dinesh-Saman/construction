@@ -1,32 +1,29 @@
 const mongoose = require("mongoose");
 
-const ItemSchema = new mongoose.Schema({
+const RequestSchema = new mongoose.Schema({
+
+    item_id:{
+        
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Item",
+        required:true,
+    },
     
-    issue_name:{
+    Item_name:{
         type:String,
         required:true
     },
-    issue_category:{
-        type:String,
+    
+    quantity:{
+        type:Number,
         required:true,
         unique:true
     },
-    issue_quantity:{
-        type:String,
-        required:true,
-        unique:true
-    },
-    receive_status:{
-        type:String,
+    Date:{
+        type:Number,
         required:true
     },
-    receive_date:{
-        type:String,
-        required:true,
-    },
-    proj_id:{
-        type:,
-        required:true,
-    },
+    
    
 })
+module.exports = mongoose.model("Request" , RequestSchema)

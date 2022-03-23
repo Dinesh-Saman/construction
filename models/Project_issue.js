@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ItemSchema = new mongoose.Schema({
+const Project_issueSchema = new mongoose.Schema({
     
     issue_name:{
         type:String,
@@ -20,13 +20,16 @@ const ItemSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    sreceive_date:{
-        type:String,
+    receive_date:{
+        type:Number,
         required:true,
     },
-    // proj_id:{
-    //     type:,
-    //     required:true,
-    // },
+    proj_id:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Project",
+        required:true,
+    },
+     
    
 })
+module.exports = mongoose.model("Project_issue" , Project_issueSchema)
