@@ -13,6 +13,7 @@ app.use(bodyparser.json())
 
 app.use("/api/employee-manage" , require("./routes/employee-manage"))
 app.use("/api/supplier-manage" , require("./routes/supplier-manage"))
+app.use("/api/purchase-manage" , require("./routes/purchase-manage"))
 
 const startApp = async () => {
     try {
