@@ -14,6 +14,12 @@ app.use(bodyparser.json())
 app.use("/api/employee-manage" , require("./routes/employee-manage"))
 app.use("/api/attandance-manage" , require("./routes/attandance-manage"))
 app.use("/api/salary-manage" , require("./routes/salary-manage"))
+app.use("/api/department-manage" , require("./routes/department-manage"))
+app.use("/api/position-manage" , require("./routes/position-manage"))
+app.use("/api/duty_duration-manage" , require("./routes/duty_duration-manage"))
+app.use("/api/leave-manage" , require("./routes/leave-manage"))
+app.use("/api/payroll-manage" , require("./routes/payroll-manage"))
+app.use("/api/bankaccount-manage" , require("./routes/bankaccount-manage"))
 
 const startApp = async () => {
     try {
