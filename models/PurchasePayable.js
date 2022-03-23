@@ -36,6 +36,7 @@ const PurchasePayableSchema = new mongoose.Schema({
         ref:"MainCashSchema"
     },
     
+  
 })
 
 module.exports = mongoose.model('PurchasePayable' ,PurchasePayableSchema )
