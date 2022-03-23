@@ -3,27 +3,27 @@ const mongoose = require("mongoose");
 const salarySchema = new mongoose.Schema({
 
     amount:{
-        type:Float32Array,
+        type:Number,
         required:true
     },
     annual:{
-        type:Float32Array,
+        type:Number,
         required:true
     },
     bonus:{
-        type:Float32Array,
+        type:Number,
         required:true
     },
     OT:{
-        type:Float32Array,
+        type:Number,
         required:true
     },
     gratuity:{
-        type:Float32Array,
+        type:Number,
         required:true,
     },
     remittance:{
-        type:Float32Array,
+        type:Number,
         required:true,
     },
     dept_id:{
