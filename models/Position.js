@@ -15,6 +15,12 @@ const PositionSchema = new mongoose.Schema({
         type:Date,
         required:true
     },
+    emp_id:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Employee"
+    },
  
     
 })
+
+module.exports=mongoose.model('Position',PositionSchema)
