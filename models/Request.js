@@ -20,7 +20,7 @@ const ItemSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    sreceive_date:{
+    receive_date:{
         type:String,
         required:true,
     },
