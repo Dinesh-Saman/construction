@@ -20,8 +20,11 @@ app.use("/api/duty_duration-manage" , require("./routes/duty_duration-manage"))
 app.use("/api/leave-manage" , require("./routes/leave-manage"))
 app.use("/api/payroll-manage" , require("./routes/payroll-manage"))
 app.use("/api/bankaccount-manage" , require("./routes/bankaccount-manage"))
+app.use("/api/project-manage", require("./routes/project-manage"))
+app.use("/api/supplier-manage", require("./routes/supplier-manage"))
+app.use("/api/purchase-manage", require("./routes/purchase-manage"))
 
-const startApp = async () => {
+const startApp = async() => {
     try {
         await connect(DB);
         success({
@@ -31,7 +34,7 @@ const startApp = async () => {
 
         app.listen(PORT, () => success({ message: `Server started on PORT ${PORT}`, badge: true }))
     } catch (err) {
-        
+
         error({
             message: `Unable to connect with the Database ${DB}`,
             badge: true

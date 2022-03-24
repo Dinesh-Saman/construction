@@ -24,8 +24,10 @@ const ProjectSchema = new mongoose.Schema({
     },
     client_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "//table name",
+        ref: "Client",
     },
 
 
 })
+
+module.exports = mongoose.model("Project", ProjectSchema)
