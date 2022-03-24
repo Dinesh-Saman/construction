@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Duty_DurationSchema = new mongoose.Schema({
 
     duration:{
-        type:Int8Array,
+        type:Number,
         required:true
     },
     Date:{
