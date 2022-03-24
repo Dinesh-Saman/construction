@@ -12,7 +12,7 @@ router.get("/get-requests" , async(req,res)=>{
     })
 })
 
-router.post("/add-Request" , async(req,res)=>{
+router.post("/add-request" , async(req,res)=>{
     
 })
 
