@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const DailyPaymentSchema = new mongoose.Schema({
 
-    Project_id:{
+    Payroll_id:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:""
+        ref:"payrollSchema"
     },
    
     Date:{

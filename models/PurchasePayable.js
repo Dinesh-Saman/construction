@@ -23,7 +23,7 @@ const PurchasePayableSchema = new mongoose.Schema({
 
     invoice_no:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:""
+        ref:"PurchaseSchema"
     },
 
     Acc_id:{
@@ -39,4 +39,4 @@ const PurchasePayableSchema = new mongoose.Schema({
   
 })
 
-module.exports = mongoose.model('PurchasePayable' ,PurchasePayablegSchema )
+module.exports = mongoose.model('PurchasePayable' ,PurchasePayableSchema )
