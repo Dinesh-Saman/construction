@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const AttandanceSchema = new mongoose.Schema({
 
     Total_labor:{
-        type:Int32Array,
+        type:Number,
         required:true
     },
     salary:{
-        type:Float32Array,
+        type:Number,
         required:true
     },
     Date:{

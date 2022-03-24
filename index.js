@@ -16,6 +16,19 @@ app.use("/api/project-manage", require("./routes/project-manage"))
 app.use("/api/employee-manage", require("./routes/employee-manage"))
 app.use("/api/supplier-manage", require("./routes/supplier-manage"))
 app.use("/api/purchase-manage", require("./routes/purchase-manage"))
+app.use("/api/employee-manage", require("./routes/employee-manage"))
+app.use("/api/attandance-manage", require("./routes/attandance-manage"))
+app.use("/api/salary-manage", require("./routes/salary-manage"))
+
+app.use("/api/item-manage", require("./routes/item-manage"))
+app.use("/api/request-manage", require("./routes/request-manage"))
+app.use("/api/employee-manage", require("./routes/employee-manage"))
+app.use("/api/project-manage", require("./routes/project-manage"))
+app.use("/api/supplier-manage", require("./routes/supplier-manage"))
+app.use("/api/purchase-manage", require("./routes/purchase-manage"))
+app.use("/api/project-issue-manage", require("./routes/project-issue-manage"))
+app.use("/api/project-issue-item-manage", require("./routes/project-issue-items-manage"))
+
 
 const startApp = async() => {
     try {
