@@ -12,6 +12,7 @@ app.use(cors())
 app.use(bodyparser.json())
 
 app.use("/api/employee-manage" , require("./routes/employee-manage"))
+app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
 
 const startApp = async () => {
     try {
