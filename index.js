@@ -9,7 +9,10 @@ const { DB, PORT } = require('./config')
 const app = express()
 
 app.use(cors())
-app.use(bodyparser.json())
+app.use(bodyparser.urlencoded({
+    extended: true
+}));
+
 
 app.use("/api/employee-manage", require("./routes/employee-manage"))
 app.use("/api/project-manage", require("./routes/project-manage"))
