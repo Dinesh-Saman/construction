@@ -13,7 +13,7 @@ router.get("/get-items" , async(req,res)=>{
 })
 
 router.post("/add-item" , async(req,res)=>{
-    
+console.log(req.body)    
 })
 
 

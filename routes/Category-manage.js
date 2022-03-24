@@ -13,7 +13,16 @@ router.get("/get-category" , async(req,res)=>{
 })
 
 router.post("/add-category" , async(req,res)=>{
-console.log(req.body)
+var categoryname=req.body.catname
+var newCategory= new CategorySchema({category_name:categoryname})
+newCategory.save(function(err,result){
+    if(err){
+        res.json({msg:err})
+    }else{
+        res.json({mag:"category created"})
+    }
+})
+
 })
 
 module.exports = router;
