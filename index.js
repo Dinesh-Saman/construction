@@ -23,6 +23,8 @@ app.use("/api/supplier-manage" , require("./routes/supplier-manage"))
 app.use("/api/purchase-manage" , require("./routes/purchase-manage"))
 app.use("/api/project-issue-manage" , require("./routes/project-issue-manage"))
 app.use("/api/project-issue-item-manage" , require("./routes/project-issue-items-manage"))
+app.use("/api/category-manage" , require("./routes/Category-manage"))
+app.use("/api/category_issue-manage" , require("./routes/Category-issue-manage"))
 
 
 const startApp = async() => {
