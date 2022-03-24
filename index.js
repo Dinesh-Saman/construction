@@ -14,6 +14,7 @@ app.use(bodyparser.urlencoded({
 }));
 
 app.use("/api/employee-manage" , require("./routes/employee-manage"))
+app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
 app.use("/api/attandance-manage" , require("./routes/attandance-manage"))
 app.use("/api/salary-manage" , require("./routes/salary-manage"))
 app.use("/api/department-manage" , require("./routes/department-manage"))
