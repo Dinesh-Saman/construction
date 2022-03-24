@@ -40,7 +40,7 @@ const EmployeeSchema = new mongoose.Schema({
         required:true
     },
     engine_no:{
-        type:No,
+        type:Number,
         unique:true,
         required:true
     },
@@ -54,13 +54,11 @@ const EmployeeSchema = new mongoose.Schema({
         required:true,
     },
     vehicle_weight:{
-        type:String,
-        enum:["PERMANENT"],
+        type:Number,
         required:true
     },
     manufacture_country:{
         type:String,
-        enum:["PERMANENT"],
         required:true
     },
     
