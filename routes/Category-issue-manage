@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const CategorySchema = require("../models/CategoryIssue")
+const CategoryissueSchema = require("../models/CategoryIssue")
 
 router.get("/get-category_issue" , async(req,res)=>{
-    let category_issue = CategorySchema.find({} , function(err ,category_issue ){
+    let category_issue = CategoryissueSchema.find({} , function(err ,category_issue ){
         if(err){
             res.json({msg:err})
         }else{
@@ -13,7 +13,15 @@ router.get("/get-category_issue" , async(req,res)=>{
 })
 
 router.post("/add-category_issue" , async(req,res)=>{
-    
+    var categoryissuename=req.body.catisname
+    var newCategoryissue= new CategoryissueSchema({category_issue_name:categoryissuename})
+    newCategoryissue.save(function(err,result){
+        if(err){
+            res.json({msg:err})
+        }else{
+            res.json({mag:"category issue created"})
+        }  
 })
 
+})
 module.exports = router;
