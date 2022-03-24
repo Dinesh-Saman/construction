@@ -7,7 +7,7 @@ const payrollSchema = new mongoose.Schema({
         required:true
     },
     Total_amount:{
-        type:Float32Array,
+        type:Number,
         required:true
     },
     Date:{

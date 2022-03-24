@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const BankAccountSchema = new mongoose.Schema({
 
     bank_account_no:{
-        type:Int32Array,
+        type:Number,
         unique:true,
         required:true
     },
