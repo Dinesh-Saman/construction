@@ -14,7 +14,7 @@ router.get("/get-projects", async(req, res) => {
 
 
 router.post("/create-project", async(req, res) => {
-    // res.json({ msg: "Post created" })
+    
     console.log(req.body)
 })
 

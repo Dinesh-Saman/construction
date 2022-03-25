@@ -8,6 +8,7 @@ const Project_issueSchema = new mongoose.Schema({
     },
     issue_category:{
         type:String,
+        enum:["ACCESSORIES","MATERIALS"],
         required:true,
         unique:true
     },

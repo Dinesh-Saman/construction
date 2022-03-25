@@ -13,7 +13,16 @@ router.get("/get-project-issue-items" , async(req,res)=>{
 })
 
 router.post("/add-project_issue_items" , async(req,res)=>{
-    
+    var item=req.body.itm
+    var issue=req.body.iss
+    var newRequest= new RequestSchema({item:item,issue:issue})
+    newRequest.save(function(err,result){
+        if(err){
+            res.json({msg:err})
+        }else{
+            res.json({mag:"project item created"})
+        }  
+})
 })
 
 
