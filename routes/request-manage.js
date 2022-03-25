@@ -16,7 +16,13 @@ router.post("/add-request" , async(req,res)=>{
     var itemid=req.body.reqitemid
     var reqquantity=req.body.reqquant
     var date=req.body.dte
-    var newRequest= new RequestSchema({item_id:itemid,quantity:reqquantity,Date:date})
+
+    var itemId = mongoose.Types.ObjectId(itemid)
+    
+    var newRequest= new RequestSchema({
+        item_id:itemId,
+        quantity:reqquantity,
+        Date:date})
     newRequest.save(function(err,result){
         if(err){
             res.json({msg:err})
