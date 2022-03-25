@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-const EmployeeSchema = new mongoose.Schema({
+const VehicleSchema = new mongoose.Schema({
 
 
     veh_type:{
@@ -63,3 +63,5 @@ const EmployeeSchema = new mongoose.Schema({
     },
     
 })
+
+module.exports = mongoose.model('Vehicles' ,VehicleSchema )
