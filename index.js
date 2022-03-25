@@ -13,8 +13,6 @@ app.use(bodyparser.urlencoded({
     extended: true
 }));
 
-<<<<<<< HEAD
-=======
 app.use("/api/employee-manage" , require("./routes/employee-manage"))
 app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
 app.use("/api/attandance-manage" , require("./routes/attandance-manage"))
@@ -30,7 +28,6 @@ app.use("/api/supplier-manage", require("./routes/supplier-manage"))
 app.use("/api/purchase-manage", require("./routes/purchase-manage"))
 app.use("/api/appointment-manage", require("./routes/appointment-manage"))
 app.use("/api/client-manage", require("./routes/client-manage"))
->>>>>>> 96bb23fd4c89608277fee731cf34b1e54f0fda8b
 
 app.use("/api/employee-manage", require("./routes/employee-manage"))
 app.use("/api/project-manage", require("./routes/project-manage"))
