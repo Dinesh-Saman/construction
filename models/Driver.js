@@ -36,7 +36,7 @@ const DriverSchema = new mongoose.Schema({
         required:true
     },
     dri_licenno:{
-        type:Date
+        type:Date,
         required:true
     },
     dri_licenvalidity:{
