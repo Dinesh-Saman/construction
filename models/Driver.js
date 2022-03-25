@@ -19,7 +19,7 @@ const DriverSchema = new mongoose.Schema({
         
     },
     dri_contact:{
-        type:String,
+        type:Number,
         required:true
     },
     dri_dob:{
@@ -32,21 +32,19 @@ const DriverSchema = new mongoose.Schema({
         required:true,
     },
     dri_province:{
-        type:Date,
+        type:String,
         required:true
     },
     dri_licenno:{
-        type:Date,
+        type:Number,
         required:true
     },
     dri_licenvalidity:{
         type:Number,
-        unique:true,
         required:true
     },
     dri_issuedate:{
         type:Date,
-        unique:true,
         require:true,
     },
     
