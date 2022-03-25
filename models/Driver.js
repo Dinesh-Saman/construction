@@ -1,67 +1,55 @@
 const mongoose = require("mongoose");
 
 
-const VehicleSchema = new mongoose.Schema({
+const DriverSchema = new mongoose.Schema({
 
 
-    veh_type:{
+    dri_name:{
         type:String,
         required:true
     },
-    veh_make:{
+    dri_nic:{
         type:String,
         required:true,
         
     },
-    veh_model:{
+    dri_address:{
         type:String,
         required:true,
         
     },
-    veh_year:{
+    dri_contact:{
         type:String,
         required:true
     },
-    veh_No:{
+    dri_dob:{
         type:String,
         required:true,
         unique:true
     },
-    owner_name:{
+    dri_district:{
         type:String,
         required:true,
     },
-    purchased_date:{
+    dri_province:{
         type:Date,
         required:true
     },
-    registered_date:{
-        type:Date,
+    dri_licenno:{
+        type:Date
         required:true
     },
-    engine_no:{
+    dri_licenvalidity:{
         type:Number,
         unique:true,
         required:true
     },
-    chassi_no:{
+    dri_issuedate:{
         type:Date,
         unique:true,
         require:true,
     },
-    insurance_date:{
-        type:String,
-        required:true,
-    },
-    vehicle_weight:{
-        type:Number,
-        required:true
-    },
-    manufacture_country:{
-        type:String,
-        required:true
-    },
     
 })
 
-module.exports = mongoose.model('Vehicles' ,VehicleSchema )
+module.exports = mongoose.model('Drivers' ,DriverSchema )
