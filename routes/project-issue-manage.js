@@ -19,7 +19,16 @@ router.post("/add-project_issue" , async(req,res)=>{
     var receivestatus=req.body.recsts
     var receivedate=req.body.recdte
     var projid=req.body.proid
-    var newRequest= new Project_issueSchema({issue_name:issuename,issue_category:issuecategory,issue_quantity:issuequantity,receive_status:receivestatus,receive_date: receivedate,proj_id:projid})
+
+    var proId = mongoose.Types.ObjectId(projid)
+    
+    var newRequest= new Project_issueSchema({
+        issue_name:issuename,
+        issue_category:issuecategory,
+        issue_quantity:issuequantity,
+        receive_status:receivestatus,
+        receive_date: receivedate,
+        proj_id:proId})
     newRequest.save(function(err,result){
         if(err){
             res.json({msg:err})
