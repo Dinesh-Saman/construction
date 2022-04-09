@@ -5,8 +5,9 @@ const EquipmentSchema = new mongoose.Schema({
 
 
     equipment_id:{
-        type:number,
-        required:true
+        type:Number,
+        required:true,
+        unique:true
     },
     eq_type:{
         type:String,
