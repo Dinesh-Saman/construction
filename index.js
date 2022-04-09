@@ -27,6 +27,8 @@ app.use("/api/project-issue-item-manage" , require("./routes/project-issue-items
 app.use("/api/driver-manage" , require("./routes/driver-manage"))
 app.use("/api/fuel-manage" , require("./routes/fuel-manage"))
 app.use("/api/equipment-manage" , require("./routes/equipment-manage"))
+app.use("/api/consignment-manage" , require("./routes/consignment-manage"))
+app.use("/api/route-manage" , require("./routes/route-manage"))
 
 
 const startApp = async() => {
