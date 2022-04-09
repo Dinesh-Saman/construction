@@ -5,7 +5,7 @@ const EquipmentSchema = new mongoose.Schema({
 
 
     equipment_id:{
-        type:Date,
+        type:number,
         required:true
     },
     eq_type:{
@@ -33,7 +33,7 @@ const EquipmentSchema = new mongoose.Schema({
         required:true,
     },
     owner_address:{
-        type:Number,
+        type:String,
         required:true
     },
     eq_weight:{
@@ -41,11 +41,11 @@ const EquipmentSchema = new mongoose.Schema({
         required:true
     },
     eq_purchase_date:{
-        type:Number,
+        type:Date,
         required:true
     },
     eq_operator:{
-        type:Number,
+        type:String,
         require:true,
     },
     
