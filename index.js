@@ -30,6 +30,8 @@ app.use("/api/equipment-manage" , require("./routes/equipment-manage"))
 app.use("/api/consignment-manage" , require("./routes/consignment-manage"))
 app.use("/api/route-manage" , require("./routes/route-manage"))
 app.use("/api/service-manage" , require("./routes/service-manage"))
+app.use("/api/inspection-manage" , require("./routes/inspection-manage"))
+app.use("/api/inquiry-manage" , require("./routes/inquiry-manage"))
 
 
 
