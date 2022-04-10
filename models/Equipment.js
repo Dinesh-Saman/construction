@@ -3,12 +3,6 @@ const mongoose = require("mongoose");
 
 const EquipmentSchema = new mongoose.Schema({
 
-
-    equipment_id:{
-        type:Number,
-        required:true,
-        unique:true
-    },
     eq_type:{
         type:String,
         required:true,
@@ -20,7 +14,7 @@ const EquipmentSchema = new mongoose.Schema({
         
     },
     eq_no:{
-        type:Number,
+        type:String,
         required:true,
     },
 

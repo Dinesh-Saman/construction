@@ -3,12 +3,6 @@ const mongoose = require("mongoose");
 
 const ServiceSchema = new mongoose.Schema({
 
-    service_id:{
-        type:String,
-        required:true,
-        unique:true
-
-    },
     service_start_date:{
         type:Date,
         required:true,
@@ -26,10 +20,9 @@ const ServiceSchema = new mongoose.Schema({
     service_period:{
         type:Number,
         required:true,
-        unique:true
     },
     veh_no:{
-        type:Number,
+        type:String,
         required:true
     },
     veh_type:{

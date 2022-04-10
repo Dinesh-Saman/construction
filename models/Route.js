@@ -4,11 +4,6 @@ const mongoose = require("mongoose");
 const RouteSchema = new mongoose.Schema({
 
 
-    route_id:{
-        type:String,
-        required:true,
-        unique:true
-    },
     transport_from:{
         type:String,
         required:true,

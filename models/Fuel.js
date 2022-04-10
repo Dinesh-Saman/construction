@@ -52,7 +52,7 @@ const FuelSchema = new mongoose.Schema({
         required:true,
     },
     dri_name:{
-        type:Number,
+        type:String,
         required:true
     },
     total_capacity:{

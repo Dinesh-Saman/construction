@@ -12,6 +12,70 @@ router.get("/get-equipments" , async(req,res)=>{
     })
 })
 
+router.route("/add-equipment").post((req,res)=>{
+    const eq_type = req.body.eq_type;
+    const eq_model = req.body.eq_model;
+    const eq_no = req.body.eq_no;
+    const manufacture_country = req.body.manufacture_country;
+    const owner_name= req.body.owner_name;
+    const owner_address = req.body.owner_address;
+    const eq_weight = req.body.eq_weight;
+    const eq_purchase_date = req.body.eq_purchase_date;
+    const eq_operator = req.body.eq_operator;
+ 
+    const newRoute = new EquipmentSchema({
+        eq_type,
+        eq_model,
+        eq_no,
+        manufacture_country,
+        owner_name,
+        owner_address,
+        eq_weight,
+        eq_purchase_date,
+        eq_operator,
+    })
+
+    newRoute.save().then(()=>{
+        res.json("Equipment Added")
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
+
+router.route("/update-equipment/:id").put(async (req, res) => {
+    let equipment_id = req.params.id;
+    const {
+        eq_type,
+        eq_model,
+        eq_no,
+        manufacture_country,
+        owner_name,
+        owner_address,
+        eq_weight,
+        eq_purchase_date,
+        eq_operator,
+    } = req.body;
+
+    const updateEquipment = {
+        eq_type,
+        eq_model,
+        eq_no,
+        manufacture_country,
+        owner_name,
+        owner_address,
+        eq_weight,
+        eq_purchase_date,
+        eq_operator,
+    }
+
+    const update = await EquipmentSchema.findByIdAndUpdate(equipment_id ,updateEquipment)
+    .then(()=>{
+        res.status(200).send({status:"Equipment updated..."})
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).send({status:"Error with updating data",error:err.message});
+    })
+} )
 
 
 module.exports = router;

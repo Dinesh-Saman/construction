@@ -12,6 +12,50 @@ router.get("/get-routes" , async(req,res)=>{
     })
 })
 
+router.route("/add-route").post((req,res)=>{
+    const transport_from = req.body.transport_from;
+    const transport_to = req.body.transport_to;
+    const distance = req.body.distance;
+    const road_numbers = req.body.road_numbers;
+    const traffic_level = req.body.traffic_level;
+
+    const newRoute = new RouteSchema({
+        transport_from,
+        transport_to,
+        distance,
+        road_numbers,
+        traffic_level
+    })
+
+    newRoute.save().then(()=>{
+        res.json("Route Added")
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
+
+
+router.route("/update-route/:id").put(async (req, res) => {
+    let route_id = req.params.id;
+    const {transport_from,transport_to,distance,road_numbers,traffic_level} = req.body;
+
+    const updateRoute = {
+        transport_from,
+        transport_to,
+        distance,
+        road_numbers,
+        traffic_level
+    }
+
+    const update = await RouteSchema.findByIdAndUpdate(route_id,updateRoute)
+    .then(()=>{
+        res.status(200).send({status:"Route updated..."})
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).send({status:"Error with updating data",error:err.message});
+    })
+} )
+ 
 
 
 module.exports = router;

@@ -4,11 +4,6 @@ const mongoose = require("mongoose");
 const ConsignmentSchema = new mongoose.Schema({
 
 
-    transport_id:{
-        type:String,
-        required:true,
-        unique:true
-    },
     transport_date:{
         type:Date,
         required:true,
@@ -32,7 +27,7 @@ const ConsignmentSchema = new mongoose.Schema({
         required:true,
     },
     route:{
-        type:Number,
+        type:String,
         required:true
     },
     max_weight:{

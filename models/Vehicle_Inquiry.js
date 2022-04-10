@@ -3,12 +3,6 @@ const mongoose = require("mongoose");
 
 const InquirySchema = new mongoose.Schema({
 
-
-    inquiry_id:{
-        type:String,
-        required:true,
-        unique:true
-    },
     inquiry_name:{
         type:String,
         required:true,  
