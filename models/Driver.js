@@ -25,7 +25,6 @@ const DriverSchema = new mongoose.Schema({
     dri_dob:{
         type:String,
         required:true,
-        unique:true
     },
     dri_district:{
         type:String,
