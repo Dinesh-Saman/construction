@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema
-
 const VehicleSchema = new mongoose.Schema({
 
     veh_type:{
