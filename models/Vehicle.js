@@ -8,12 +8,12 @@ const VehicleSchema = new mongoose.Schema({
     },
     veh_make:{
         type:String,
-        required:true,
+        required:true
         
     },
     veh_model:{
         type:String,
-        required:true,
+        required:true
         
     },
     veh_year:{
@@ -22,11 +22,11 @@ const VehicleSchema = new mongoose.Schema({
     },
     veh_no:{
         type:String,
-        required:true,
+        required:true
     },
     owner_name:{
         type:String,
-        required:true,
+        required:true
     },
     purchased_date:{
         type:Date,
@@ -42,11 +42,11 @@ const VehicleSchema = new mongoose.Schema({
     },
     chassi_no:{
         type:String,
-        require:true,
+        require:true
     },
     insurance_date:{
         type:Date,
-        required:true,
+        required:true
     },
     vehicle_weight:{
         type:Number,

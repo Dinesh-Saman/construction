@@ -19,11 +19,11 @@ router.route("/add-equipment").post((req,res)=>{
     const manufacture_country = req.body.manufacture_country;
     const owner_name= req.body.owner_name;
     const owner_address = req.body.owner_address;
-    const eq_weight = req.body.eq_weight;
+    const eq_weight = Number(req.body.eq_weight);
     const eq_purchase_date = req.body.eq_purchase_date;
     const eq_operator = req.body.eq_operator;
  
-    const newRoute = new EquipmentSchema({
+    const newEquipment = new EquipmentSchema({
         eq_type,
         eq_model,
         eq_no,
@@ -35,7 +35,7 @@ router.route("/add-equipment").post((req,res)=>{
         eq_operator,
     })
 
-    newRoute.save().then(()=>{
+    newEquipment.save().then(()=>{
         res.json("Equipment Added")
     }).catch((err)=>{
         console.log(err);
