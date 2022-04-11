@@ -21,7 +21,6 @@ const EquipmentSchema = new mongoose.Schema({
     manufacture_country:{
         type:String,
         required:true,
-        unique:true
     },
     owner_name:{
         type:String,

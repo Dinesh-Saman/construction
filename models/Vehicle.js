@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
+const Schema = mongoose.Schema
 
 const VehicleSchema = new mongoose.Schema({
-
 
     veh_type:{
         type:String,
@@ -19,7 +19,7 @@ const VehicleSchema = new mongoose.Schema({
         
     },
     veh_year:{
-        type:String,
+        type:Number,
         required:true
     },
     veh_no:{
@@ -40,12 +40,10 @@ const VehicleSchema = new mongoose.Schema({
     },
     engine_no:{
         type:String,
-        unique:true,
         required:true
     },
     chassi_no:{
         type:String,
-        unique:true,
         require:true,
     },
     insurance_date:{
