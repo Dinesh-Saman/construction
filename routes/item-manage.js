@@ -1,4 +1,5 @@
 const express = require('express')
+const { default: mongoose } = require('mongoose')
 const router = express.Router()
 const ItemSchema = require("../models/Item")
 
@@ -13,8 +14,30 @@ router.get("/get-items" , async(req,res)=>{
 })
 
 router.post("/add-item" , async(req,res)=>{
-    
+    var itemname = req.body.itmname
+    var ItemCategory=req.body.itmcat
+    var quantity=req.body.itmquant
+    var reorder_level=req.body.itmreorder
+    var  sup_id=req.body.itmsup
+
+
+    var catId = mongoose.Types.ObjectId(ItemCategory)
+    var supId = mongoose.Types.ObjectId(sup_id)
+
+    var newItem= new ItemSchema({
+        item_name:itemname,
+        category_name:catId,
+        quantity:quantity,
+        reorder_level:reorder_level,
+        sup_id:supId})
+    newItem.save(function(err,result){
+        if(err){
+            res.json({msg:err})
+        }else{
+            res.json({mag:"item  created"})
+        }   
 })
 
+})
 
 module.exports = router;

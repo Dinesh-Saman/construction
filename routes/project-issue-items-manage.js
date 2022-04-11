@@ -13,7 +13,22 @@ router.get("/get-project-issue-items" , async(req,res)=>{
 })
 
 router.post("/add-project_issue_items" , async(req,res)=>{
-    
+    var item=req.body.itm
+    var issue=req.body.iss
+
+    var itemID = mongoose.Types.ObjectId(item)
+    var issueID = mongoose.Types.ObjectId(issue)
+
+    var newRequest= new Project_issue_itemSchema({
+        item:itemID,
+        issue:issueID})
+    newRequest.save(function(err,result){
+        if(err){
+            res.json({msg:err})
+        }else{
+            res.json({mag:"project item created"})
+        }  
+})
 })
 
 
