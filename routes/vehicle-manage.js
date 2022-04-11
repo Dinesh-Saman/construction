@@ -93,6 +93,21 @@ router.route("/update-vehicle/:id").put(async (req, res) => {
     })
 } )
 
+router.route("/delete-vehicle/:id").delete(async (req,res)=>{
+    let vehicle_id = req.params.id;
+
+    await VehicleSchema.findByIdAndDelete(vehicle_id)
+        .then(()=>{
+            res.status(200).send({
+                status:"vehicle deleted"
+            });
+        }).catch((err)=>{
+            console.log(err.message);
+            res.status(500).send({status:"Error with delete vehicle",error :err.message});
+        })
+})
+
+
 
 
 module.exports = router;

@@ -85,4 +85,18 @@ router.route("/update-consignment/:id").put(async (req, res) => {
     })
 } )
 
+router.route("/delete-consignment/:id").delete(async (req,res)=>{
+    let consignment_id = req.params.id;
+
+    await ConsignmentSchema.findByIdAndDelete(consignment_id)
+        .then(()=>{
+            res.status(200).send({
+                status:"consignment deleted"
+            });
+        }).catch((err)=>{
+            console.log(err.message);
+            res.status(500).send({status:"Error with delete consignment",error :err.message});
+        })
+})
+
 module.exports = router;

@@ -77,5 +77,20 @@ router.route("/update-equipment/:id").put(async (req, res) => {
     })
 } )
 
+router.route("/delete-equipment/:id").delete(async (req,res)=>{
+    let equipment_id = req.params.id;
+
+    await EquipmentSchema.findByIdAndDelete(equipment_id)
+        .then(()=>{
+            res.status(200).send({
+                status:"equipment deleted"
+            });
+        }).catch((err)=>{
+            console.log(err.message);
+            res.status(500).send({status:"Error with delete equipment",error :err.message});
+        })
+})
+
+
 
 module.exports = router;

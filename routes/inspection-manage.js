@@ -85,4 +85,19 @@ router.route("/update-inspection/:id").put(async (req, res) => {
     })
 } )
 
+router.route("/delete-inspection/:id").delete(async (req,res)=>{
+    let inspection_id = req.params.id;
+
+    await InspectionSchema.findByIdAndDelete(inspection_id)
+        .then(()=>{
+            res.status(200).send({
+                status:"Inspection deleted"
+            });
+        }).catch((err)=>{
+            console.log(err.message);
+            res.status(500).send({status:"Error with delete inspection",error :err.message});
+        })
+})
+
+
 module.exports = router;

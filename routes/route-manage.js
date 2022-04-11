@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const RouteSchema  = require("../models/Route")
+const { route } = require('./inquiry-manage')
 
 router.get("/get-routes" , async(req,res)=>{
     let routes = RouteSchema.find({} , function(err , routes){
@@ -56,6 +57,20 @@ router.route("/update-route/:id").put(async (req, res) => {
     })
 } )
  
+
+router.route("/delete-route/:id").delete(async (req,res)=>{
+    let route_id = req.params.id;
+
+    await RouteSchema.findByIdAndDelete(route_id)
+        .then(()=>{
+            res.status(200).send({
+                status:"user deleted"
+            });
+        }).catch((err)=>{
+            console.log(err.message);
+            res.status(500).send({status:"Error with delete user",error :err.message});
+        })
+})
 
 
 module.exports = router;

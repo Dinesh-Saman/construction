@@ -100,4 +100,21 @@ router.route("/update-fuel/:id").put(async (req, res) => {
 
 
 
+router.route("/delete-fuel/:id").delete(async (req,res)=>{
+    let fuel_id = req.params.id;
+
+    await FuelSchema.findByIdAndDelete(fuel_id)
+        .then(()=>{
+            res.status(200).send({
+                status:"fuel deleted"
+            });
+        }).catch((err)=>{
+            console.log(err.message);
+            res.status(500).send({status:"Error with delete fuel",error :err.message});
+        })
+})
+
+
+
+
 module.exports = router;

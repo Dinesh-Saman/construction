@@ -91,5 +91,23 @@ router.route("/update-service/:id").put(async (req, res) => {
 } )
 
 
+router.route("/delete-service/:id").delete(async (req,res)=>{
+    let service_id = req.params.id;
+
+    await ServiceSchema.findByIdAndDelete(service_id)
+        .then(()=>{
+            res.status(200).send({
+                status:"service deleted"
+            });
+        }).catch((err)=>{
+            console.log(err.message);
+            res.status(500).send({status:"Error with delete service",error :err.message});
+        })
+})
+
+
+
+
+
 
 module.exports = router;

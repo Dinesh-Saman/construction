@@ -85,4 +85,19 @@ router.route("/update-inquiry/:id").put(async (req, res) => {
     })
 } )
 
+router.route("/delete-inquiry/:id").delete(async (req,res)=>{
+    let inquiry_id = req.params.id;
+
+    await InquirySchema.findByIdAndDelete(inquiry_id)
+        .then(()=>{
+            res.status(200).send({
+                status:"Inquiry deleted"
+            });
+        }).catch((err)=>{
+            console.log(err.message);
+            res.status(500).send({status:"Error with delete inquiry",error :err.message});
+        })
+})
+
+
 module.exports = router;
