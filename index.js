@@ -27,7 +27,7 @@ app.use("/api/project-manage", require("./routes/project-manage"))
 app.use("/api/supplier-manage", require("./routes/supplier-manage"))
 app.use("/api/purchase-manage", require("./routes/purchase-manage"))
 app.use("/api/appointment-manage", require("./routes/appointment-manage"))
-app.use("/api/client-manage", require("./routes/client-manage"))
+app.use("/api/client-manage", require("./routes/Client-manage"))
 
 app.use("/api/employee-manage", require("./routes/employee-manage"))
 app.use("/api/project-manage", require("./routes/project-manage"))
