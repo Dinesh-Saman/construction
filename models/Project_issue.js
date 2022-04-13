@@ -22,7 +22,7 @@ const Project_issueSchema = new mongoose.Schema({
         enum: ["yes", "No"],
     },
     receive_date:{
-        type:Number,
+        type:Date,
         required:true,
     },
     proj_id:{

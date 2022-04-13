@@ -43,7 +43,7 @@ router.delete("/delete-project-issue/:id",async(req,res)=>{
 
     //console.log(driver_id)
 
-    await ItemSchema.deleteOne({_id:project_issue_id})
+    await Project_issueSchema.deleteOne({_id:project_issue_id})
     .then(()=>{
         res.status(200).send({
             status:"project-issue deleted"
