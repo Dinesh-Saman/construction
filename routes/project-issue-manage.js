@@ -1,4 +1,5 @@
 const express = require('express')
+const  mongoose = require('mongoose')
 const router = express.Router()
 const Project_issueSchema = require("../models/Project_issue")
 
@@ -37,6 +38,20 @@ router.post("/add-project_issue" , async(req,res)=>{
         }  
 })   
 })
+router.delete("/delete-project-issue/:id",async(req,res)=>{
+    let project_issue_id = req.params.id;
 
+    //console.log(driver_id)
+
+    await ItemSchema.deleteOne({_id:project_issue_id})
+    .then(()=>{
+        res.status(200).send({
+            status:"project-issue deleted"
+        });
+    }).catch((err)=>{
+        console.log(err.message);
+        res.status(500).send({status:"Error with delete project-issue",error :err.message});
+    })
+})
 
 module.exports = router;

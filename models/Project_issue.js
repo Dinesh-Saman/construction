@@ -10,12 +10,12 @@ const Project_issueSchema = new mongoose.Schema({
         type:String,
         enum:["ACCESSORIES","MATERIALS"],
         required:true,
-        unique:true
+        
     },
     issue_quantity:{
         type:String,
         required:true,
-        unique:true
+        
     },
     receive_status:{
         type:String,

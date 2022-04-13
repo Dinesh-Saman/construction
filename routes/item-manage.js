@@ -1,5 +1,5 @@
 const express = require('express')
-const { default: mongoose } = require('mongoose')
+const  mongoose = require('mongoose')
 const router = express.Router()
 const ItemSchema = require("../models/Item")
 
@@ -39,5 +39,19 @@ router.post("/add-item" , async(req,res)=>{
 })
 
 })
+router.delete("/delete-item/:id",async(req,res)=>{
+    let item_id = req.params.id;
 
+    //console.log(item_id)
+
+    await ItemSchema.deleteOne({_id:item_id})
+    .then(()=>{
+        res.status(200).send({
+            status:"item deleted"
+        });
+    }).catch((err)=>{
+        console.log(err.message);
+        res.status(500).send({status:"Error with delete item",error :err.message});
+    })
+})
 module.exports = router;
