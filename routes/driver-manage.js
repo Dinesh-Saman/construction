@@ -102,7 +102,7 @@ router.route("/delete-driver/:id").delete(async (req,res)=>{
 router.delete("/delete-driver/:id",async(req,res)=>{
     let driver_id = req.params.id;
 
-    //console.log(driver_id)dfedfed
+    //console.log(driver_id)dfedf
 
     await DriverSchema.findOneAndDelete(driver_id)
     .then(()=>{
