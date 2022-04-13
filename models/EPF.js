@@ -23,7 +23,7 @@ const EPFSchema = new mongoose.Schema({
 
     Payroll_id:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:""
+        ref:"payrollSchema"
     },
 
     Acc_id:{

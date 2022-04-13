@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const CasualWagesSchema = new mongoose.Schema({
 
-    Project_id:{
+    Payroll_id:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:""
+        ref:"payrollSchema"
     },
    
     Basic_Salary:{
@@ -30,7 +30,7 @@ const CasualWagesSchema = new mongoose.Schema({
     
     Emp_Acc_id:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:""
+        ref:"BankAccountSchema"
     },
     
 

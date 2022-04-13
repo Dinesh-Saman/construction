@@ -1,4 +1,5 @@
 const express = require('express')
+const { default: mongoose } = require('mongoose')
 const router = express.Router()
 const PurchaseSchema = require("../models/Purchase")
 
@@ -21,6 +22,9 @@ router.post("/add-purchases" , async(req,res)=>{
     var total_amount = req.body.total_amount;
     var supplier_id = req.body.supplier_id;
     var item_id = req.body.item_id;
+
+    var supplier_id = mongoose.Types.ObjectId(supplier_id)
+    var item_id = mongoose.Types.ObjectId(item_id)
 
     var newPurchase = new PurchaseSchema({
         invoice_date:invoice_date,
