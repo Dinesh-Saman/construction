@@ -30,13 +30,15 @@ router.post("/add-client" , async(req,res)=>{
         nic_no:nic
     })
 
-    newClient.save(function(err,result){
-        if(err){
-            res.json({msg:err})
-        }else{
-            res.json({msg:"Completed"})
-        }
-    })
+    // newClient.save(function(err,result){
+    //     if(err){
+    //         res.json({msg:err})
+    //     }else{
+    //         res.json({msg:"Completed"})
+    //     }
+    // })
+
+    console.log(req)
 
 })
 

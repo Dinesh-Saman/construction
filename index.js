@@ -9,7 +9,8 @@ const { DB, PORT } = require('./config')
 const app = express()
 
 app.use(cors())
-app.use(bodyparser.json())
+app.use(bodyparser.urlencoded({ extended: false }))
+// app.use(bodyparser.json())
 
 app.use("/api/employee-manage" , require("./routes/employee-manage"))
 app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
@@ -34,6 +35,7 @@ app.use("/api/inspection-manage" , require("./routes/inspection-manage"))
 app.use("/api/inquiry-manage" , require("./routes/inquiry-manage"))
 app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
 app.use("/api/vehicle-manage1" , require("./routes/vehicle-manage"))
+app.use("/api/client-manage" , require("./routes/Client-manage"))
 
 
 
