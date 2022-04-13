@@ -13,6 +13,24 @@ app.use(bodyparser.urlencoded({
     extended: true
 }));
 
+<<<<<<< HEAD
+=======
+app.use("/api/employee-manage" , require("./routes/employee-manage"))
+app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
+app.use("/api/attandance-manage" , require("./routes/attandance-manage"))
+app.use("/api/salary-manage" , require("./routes/salary-manage"))
+app.use("/api/department-manage" , require("./routes/department-manage"))
+app.use("/api/position-manage" , require("./routes/position-manage"))
+app.use("/api/duty_duration-manage" , require("./routes/duty_duration-manage"))
+app.use("/api/leave-manage" , require("./routes/leave-manage"))
+app.use("/api/payroll-manage" , require("./routes/payroll-manage"))
+app.use("/api/bankaccount-manage" , require("./routes/bankaccount-manage"))
+app.use("/api/project-manage", require("./routes/project-manage"))
+app.use("/api/supplier-manage", require("./routes/supplier-manage"))
+app.use("/api/purchase-manage", require("./routes/purchase-manage"))
+app.use("/api/appointment-manage", require("./routes/appointment-manage"))
+app.use("/api/client-manage", require("./routes/client-manage"))
+>>>>>>> 96bb23fd4c89608277fee731cf34b1e54f0fda8b
 
 app.use("/api/employee-manage", require("./routes/employee-manage"))
 app.use("/api/project-manage", require("./routes/project-manage"))
