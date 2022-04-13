@@ -1,35 +1,33 @@
 const mongoose = require("mongoose");
 
-
 const VehicleSchema = new mongoose.Schema({
 
-
+    
     veh_type:{
         type:String,
         required:true
     },
     veh_make:{
         type:String,
-        required:true,
+        required:true
         
     },
     veh_model:{
         type:String,
-        required:true,
+        required:true
         
     },
     veh_year:{
+        type:Number,
+        required:true
+    },
+    veh_no:{
         type:String,
         required:true
     },
-    veh_No:{
-        type:String,
-        required:true,
-        unique:true
-    },
     owner_name:{
         type:String,
-        required:true,
+        required:true
     },
     purchased_date:{
         type:Date,
@@ -40,18 +38,16 @@ const VehicleSchema = new mongoose.Schema({
         required:true
     },
     engine_no:{
-        type:Number,
-        unique:true,
+        type:String,
         required:true
     },
     chassi_no:{
-        type:Date,
-        unique:true,
-        require:true,
+        type:String,
+        require:true
     },
     insurance_date:{
-        type:String,
-        required:true,
+        type:Date,
+        required:true
     },
     vehicle_weight:{
         type:Number,

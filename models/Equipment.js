@@ -1,52 +1,48 @@
 const mongoose = require("mongoose");
 
 
-const DriverSchema = new mongoose.Schema({
+const EquipmentSchema = new mongoose.Schema({
 
+    eq_type:{
+        type:String,
+        required:true,
+        
+    },
+    eq_model:{
+        type:String,
+        required:true,
+        
+    },
+    eq_no:{
+        type:String,
+        required:true,
+    },
 
-    dri_name:{
+    manufacture_country:{
+        type:String,
+        required:true,
+    },
+    owner_name:{
+        type:String,
+        required:true,
+    },
+    owner_address:{
         type:String,
         required:true
     },
-    dri_nic:{
-        type:String,
-        required:true,
-        
-    },
-    dri_address:{
-        type:String,
-        required:true,
-        
-    },
-    dri_contact:{
+    eq_weight:{
         type:Number,
         required:true
     },
-    dri_dob:{
-        type:String,
-        required:true,
-    },
-    dri_district:{
-        type:String,
-        required:true,
-    },
-    dri_province:{
-        type:String,
-        required:true
-    },
-    dri_licenno:{
-        type:String,
-        required:true
-    },
-    dri_licenvalidity:{
-        type:String,
-        required:true
-    },
-    dri_issuedate:{
+    eq_purchase_date:{
         type:Date,
+        required:true
+    },
+    eq_operator:{
+        type:String,
         require:true,
     },
     
 })
 
-module.exports = mongoose.model('Drivers' ,DriverSchema )
+module.exports = mongoose.model('Equipments' ,EquipmentSchema )
