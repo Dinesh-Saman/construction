@@ -54,4 +54,31 @@ router.delete("/delete-item/:id",async(req,res)=>{
         res.status(500).send({status:"Error with delete item",error :err.message});
     })
 })
+router.put("/update-item/:id" , async(req,res)=>{
+    let item_id = req.params.id;
+    var itemname = req.body.itmname
+    var ItemCategory=req.body.itmcat
+    var quantity=req.body.itmquant
+    var reorder_level=req.body.itmreorder
+    var  sup_id=req.body.itmsup
+
+    var catId = mongoose.Types.ObjectId(ItemCategory)
+    var supId = mongoose.Types.ObjectId(sup_id)
+    var newRequest= new  ItemSchema({
+        _id:item_id,
+        item_name:itemname,
+        category_name:catId,
+        quantity:quantity,
+        reorder_level:reorder_level,
+        sup_id:supId})
+    ItemSchema.updateOne({_id:item_id},newRequest)
+    .then(()=>{
+        res.status(200).send({
+            status:"item update"
+        });
+    }).catch((err)=>{
+        console.log(err.message);
+        res.status(500).send({status:"Error with updated item",error :err.message});
+    })
+})
 module.exports = router;
