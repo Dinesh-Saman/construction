@@ -75,6 +75,7 @@ router.put("/update-suppliers/:id" , async(req,res)=>{
     var email = req.body.email;
 
     var newSupplier = new SupplierSchema({
+        _id:supplier_id,
         supplier_name:supplier_name,
         contact_name:contact_name,
         supplier_nic:nic,

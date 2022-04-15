@@ -61,7 +61,7 @@ router.delete("/delete-purchases/:id" , async(req,res)=>{
     })
 })
 
-router.put("/update-purchases" , async(req,res)=>{
+router.put("/update-purchases/:id" , async(req,res)=>{
     // console.log(req.body)
     let invoice_no = req.params.id;
 
@@ -76,6 +76,7 @@ router.put("/update-purchases" , async(req,res)=>{
     var item_id = mongoose.Types.ObjectId(item_id)
 
     var newPurchase = new PurchaseSchema({
+        _id:invoice_no,
         invoice_date:invoice_date,
         unit_price:unit_price,
         quantity:quantity,
