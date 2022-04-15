@@ -51,7 +51,7 @@ router.delete("/delete-suppliers/:id" , async(req,res)=>{
 
     //console.log(supplier_id)
 
-    await SupplierSchema.findOneAndDelete(supplier_id)
+    await SupplierSchema.deleteOne({_id:supplier_id})
     .then(()=>{
         res.status(200).send({
             status:"supplier deleted"
@@ -61,6 +61,39 @@ router.delete("/delete-suppliers/:id" , async(req,res)=>{
         res.status(500).send({status:"Error with delete supplier",error :err.message});
     })
 })
+
+router.update("/update-suppliers/:id" , async(req,res)=>{
+
+    // // console.log(req.body)
+    let supplier_id = req.params.id;
+
+    var supplier_name = req.body.supplier_name;
+    var contact_name = req.body.contact_name;
+    var nic = req.body.nic;
+    var supplier_address = req.body.supplier_address;
+    var phone_no = req.body.phone_no;
+    var email = req.body.email;
+
+    var newSupplier = new SupplierSchema({
+        supplier_name:supplier_name,
+        contact_name:contact_name,
+        supplier_nic:nic,
+        supplier_address:supplier_address,
+        supplier_phone:phone_no,
+        supplier_email:email,
+    })
+
+    SupplierSchema.updateOne({_id:supplier_id},newSupplier)
+    .then(()=>{
+        res.status(200).send({
+            status:"supplier updated"
+        });
+    }).catch((err)=>{
+        console.log(err.message);
+        res.status(500).send({status:"Error with updated supplier",error :err.message});
+    })
+})
+
 
 
 
