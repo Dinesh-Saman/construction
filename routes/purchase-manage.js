@@ -61,7 +61,7 @@ router.delete("/delete-purchases/:id" , async(req,res)=>{
     })
 })
 
-router.update("/update-purchases" , async(req,res)=>{
+router.put("/update-purchases" , async(req,res)=>{
     // console.log(req.body)
     let invoice_no = req.params.id;
 

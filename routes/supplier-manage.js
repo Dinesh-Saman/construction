@@ -62,7 +62,7 @@ router.delete("/delete-suppliers/:id" , async(req,res)=>{
     })
 })
 
-router.update("/update-suppliers/:id" , async(req,res)=>{
+router.put("/update-suppliers/:id" , async(req,res)=>{
 
     // // console.log(req.body)
     let supplier_id = req.params.id;
