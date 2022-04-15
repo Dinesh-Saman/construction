@@ -67,7 +67,7 @@ app.use("/api/project-issue-manage", require("./routes/project-issue-manage"))
 app.use("/api/project-issue-item-manage", require("./routes/project-issue-items-manage"))
 
 
-app.use("/api/engineer-manage" , require("./routes/engineer-manage"))
+//app.use("/api/engineer-manage" , require("./routes/engineer-manage"))
 
 
 const startApp = async() => {

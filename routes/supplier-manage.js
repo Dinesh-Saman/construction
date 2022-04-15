@@ -1,5 +1,6 @@
 const express = require('express')
 const req = require('express/lib/request')
+const res = require('express/lib/response')
 const router = express.Router()
 const SupplierSchema = require("../models/Supplier")
 
@@ -41,6 +42,23 @@ router.post("/add-suppliers" , async(req,res)=>{
         }else{
             res.json({msg:"Supplier Created!"})
         }
+    })
+ 
+})
+
+router.delete("/delete-suppliers/:id" , async(req,res)=>{
+    let supplier_id = req.params.id;
+
+    //console.log(supplier_id)
+
+    await SupplierSchema.findOneAndDelete(supplier_id)
+    .then(()=>{
+        res.status(200).send({
+            status:"supplier deleted"
+        });
+    }).catch((err)=>{
+        console.log(err.message);
+        res.status(500).send({status:"Error with delete supplier",error :err.message});
     })
 })
 

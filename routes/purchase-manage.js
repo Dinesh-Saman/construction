@@ -45,4 +45,20 @@ router.post("/add-purchases" , async(req,res)=>{
 
 })
 
+router.delete("/delete-purchases/:id" , async(req,res)=>{
+    let invoice_no = req.params.id;
+
+    //console.log(invoice_no)
+
+    await PurchaseSchema.findOneAndDelete(invoice_no)
+    .then(()=>{
+        res.status(200).send({
+            status:"purchase deleted"
+        });
+    }).catch((err)=>{
+        console.log(err.message);
+        res.status(500).send({status:"Error with delete purchase",error :err.message});
+    })
+})
+
 module.exports = router;
