@@ -82,7 +82,7 @@ router.route("/update-driver/:id").put(async (req, res) => {
         res.status(500).send({status:"Error with updating data",error:err.message});
     })
 } )
- 
+/* 
 router.route("/delete-driver/:id").delete(async (req,res)=>{
     let driver_id = req.params.id;
 
@@ -97,7 +97,23 @@ router.route("/delete-driver/:id").delete(async (req,res)=>{
         })
 })
 
+*/
 
+router.delete("/delete-driver/:id",async(req,res)=>{
+    let driver_id = req.params.id;
+
+    //console.log(driver_id)wwdd
+
+    await DriverSchema.deleteOne({_id:driver_id})
+    .then(()=>{
+        res.status(200).send({
+            status:"driver deleted"
+        });
+    }).catch((err)=>{
+        console.log(err.message);
+        res.status(500).send({status:"Error with delete driver",error :err.message});
+    })
+})
 
 
 

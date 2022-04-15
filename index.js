@@ -9,8 +9,8 @@ const { DB, PORT } = require('./config')
 const app = express()
 
 app.use(cors())
+app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: false }))
-// app.use(bodyparser.json())
 
 app.use("/api/employee-manage" , require("./routes/employee-manage"))
 app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
@@ -39,9 +39,6 @@ app.use("/api/client-manage" , require("./routes/Client-manage"))
 
 
 //app.use("/api/engineer-manage" , require("./routes/engineer-manage"))
-
-// app.use("/api/engineer-manage" , require("./routes/engineer-manage"))
-
 
 const startApp = async() => {
     try {

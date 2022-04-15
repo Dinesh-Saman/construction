@@ -15,33 +15,8 @@ router.get("/get-projects", async(req, res) => {
 
 
 router.post("/create-project", async(req, res) => {
-    
-    let proName = req.body.proj_name;
-    let approvalDate = req.body.approval_date;
-    let status = req.body.status;
-    let location = req.body.location;
-    let desc = req.body.description;
-    let clientid = req.body.client_id;
 
-    let client = mongoose.Types.ObjectId(clientid)
-
-    let newProject = ProjectSchema({
-        proj_name:proName,
-        approval_date:approvalDate,
-        status,
-        location,
-        description:desc,
-        client_id:client
-    })
-
-    newProject.save(function(err,result){
-        if(err){
-            res.json({msg:err})
-        }else{
-            res.json({msg:"Completed"})
-        }
-    })
-
+    console.log(req.body)
 })
 
 module.exports = router;
