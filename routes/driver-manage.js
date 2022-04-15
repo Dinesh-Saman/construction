@@ -104,7 +104,7 @@ router.delete("/delete-driver/:id",async(req,res)=>{
 
     //console.log(driver_id)wwdd
 
-    await DriverSchema.findOneAndDelete(driver_id)
+    await DriverSchema.deleteOne({_id:driver_id})
     .then(()=>{
         res.status(200).send({
             status:"driver deleted"
