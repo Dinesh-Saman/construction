@@ -1,11 +1,6 @@
 const express = require('express')
 const router = express.Router()
-<<<<<<< HEAD
-const DriverSchema  = require("../models/Driver")
-const { route } = require('./driver-manage')
-=======
 const DriverSchema = require("../models/Driver")
->>>>>>> 3146c2024e389ff774cbd13830b13567bfd4037a
 
 router.get("/get-drivers", async(req, res) => {
     let drivers = DriverSchema.find({}, function(err, drivers) {
@@ -78,18 +73,6 @@ router.route("/update-driver/:id").put(async(req, res) => {
         dri_issuedate,
     }
 
-<<<<<<< HEAD
-    const update = await DriverSchema.findByIdAndUpdate(driver_id,updateDriver)
-    .then(()=>{
-        res.status(200).send({status:"Driver updated..."})
-    }).catch((err) => {
-        console.log(err);
-        res.status(500).send({status:"Error with updating data",error:err.message});
-    })
-} )
-/* 
-router.route("/delete-driver/:id").delete(async (req,res)=>{
-=======
     const update = await DriverSchema.findByIdAndUpdate(driver_id, updateDriver)
         .then(() => {
             res.status(200).send({ status: "Driver updated..." })
@@ -100,7 +83,6 @@ router.route("/delete-driver/:id").delete(async (req,res)=>{
 })
 
 router.route("/delete-driver/:id").delete(async(req, res) => {
->>>>>>> 3146c2024e389ff774cbd13830b13567bfd4037a
     let driver_id = req.params.id;
 
     await DriverSchema.findByIdAndDelete(driver_id)
@@ -114,7 +96,7 @@ router.route("/delete-driver/:id").delete(async(req, res) => {
         })
 })
 
-*/
+
 
 router.delete("/delete-driver/:id",async(req,res)=>{
     let driver_id = req.params.id;
