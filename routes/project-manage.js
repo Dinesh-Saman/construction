@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose =  require("mongoose")
 const router = express.Router()
 const ProjectSchema = require("../models/Project")
 
@@ -14,7 +15,7 @@ router.get("/get-projects", async(req, res) => {
 
 
 router.post("/create-project", async(req, res) => {
-    // res.json({ msg: "Post created" })
+
     console.log(req.body)
 })
 

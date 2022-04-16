@@ -25,13 +25,6 @@ const ItemSchema = new mongoose.Schema({
         ref:"Supplier",
         required:true,
     },
-
-    invoice_no:{
-        
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Purchase",
-        required:true,
-    },
     
    
 })
