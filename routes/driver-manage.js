@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const DriverSchema = require("../models/Driver")
+const DriverSchema = require("../models/Driver")
+const { route } = require('./driver-manage')
 
 router.get("/get-drivers", async(req, res) => {
     let drivers = DriverSchema.find({}, function(err, drivers) {

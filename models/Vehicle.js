@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const VehicleSchema = new mongoose.Schema({
 
+    
     veh_type:{
         type:String,
         required:true
