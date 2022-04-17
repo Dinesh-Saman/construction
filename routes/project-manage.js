@@ -44,6 +44,56 @@ router.post("/create-project", async(req, res) => {
         }
     })
 
+
+
 })
+
+router.route("/update-project/:id").put(async(req, res) => {
+    let project_id = req.params.id;
+    const {
+        proj_name,
+        approval_date,
+        status,
+        location,
+        description,
+        client_id,
+    } = req.body;
+
+    const updateProject = {
+        proj_name,
+        approval_date,
+        status,
+        location,
+        description,
+        client_id,
+    }
+
+    const update = await ProjectSchema.findByIdAndUpdate(project_id, updateProject)
+        .then(() => {
+            res.status(200).send({ status: "Project updated..." })
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).send({ status: "Error with updating project", error: err.message });
+        })
+})
+
+
+//delete method
+router.delete("/delete-project/:id", async(req, res) => {
+    let project_id = req.params.id;
+
+
+    await ProjectSchema.deleteOne({ _id: project_id })
+        .then(() => {
+            res.status(200).send({
+                status: "project deleted"
+            });
+        }).catch((err) => {
+            console.log(err.message);
+            res.status(500).send({ status: "Error with delete project", error: err.message });
+        })
+})
+
+
 
 module.exports = router;
