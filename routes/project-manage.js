@@ -46,8 +46,11 @@ router.post("/create-project", async(req, res) => {
 
 
 
+
+    console.log(req.body)
 })
 
+//update method
 router.route("/update-project/:id").put(async(req, res) => {
     let project_id = req.params.id;
     const {

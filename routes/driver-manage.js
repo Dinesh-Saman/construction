@@ -126,4 +126,22 @@ router.delete("/delete-driver/:id", async(req, res) => {
         })
 })
 
+
+
+router.delete("/delete-driver/:id", async(req, res) => {
+    let driver_id = req.params.id;
+
+    //console.log(driver_id)wwdd
+
+    await DriverSchema.deleteOne({ _id: driver_id })
+        .then(() => {
+            res.status(200).send({
+                status: "driver deleted"
+            });
+        }).catch((err) => {
+            console.log(err.message);
+            res.status(500).send({ status: "Error with delete driver", error: err.message });
+        })
+})
+
 module.exports = router;
