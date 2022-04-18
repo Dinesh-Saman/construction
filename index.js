@@ -16,14 +16,6 @@ app.use("/api/employee-manage" , require("./routes/employee-manage"))
 app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
 app.use("/api/attandance-manage" , require("./routes/attandance-manage"))
 app.use("/api/salary-manage" , require("./routes/salary-manage"))
-app.use("/api/Bankaccount-manage" , require("./routes/Bankaccount-manage"))
-app.use("/api/department-manage" , require("./routes/department-manage"))
-app.use("/api/Position-manage" , require("./routes/Position-manage"))
-app.use("/api/duty_duration-manage" , require("./routes/duty_duration-manage"))
-app.use("/api/leave-manage" , require("./routes/leave-manage"))
-app.use("/api/payroll-manage" , require("./routes/payroll-manage"))
-
-
 app.use("/api/item-manage" , require("./routes/item-manage"))
 app.use("/api/request-manage" , require("./routes/request-manage"))
 app.use("/api/employee-manage", require("./routes/employee-manage"))
@@ -43,10 +35,9 @@ app.use("/api/inquiry-manage" , require("./routes/inquiry-manage"))
 app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
 app.use("/api/vehicle-manage1" , require("./routes/vehicle-manage"))
 app.use("/api/client-manage" , require("./routes/Client-manage"))
-
-
-
-//app.use("/api/engineer-manage", require("./routes/engineer-manage"))
+app.use("/api/engineer-manage" , require("./routes/engineer-manage"))
+app.use("/api/bankaccount-manage" , require("./routes/bankaccount-manage"))
+app.use("/api/department-manage" , require("./routes/department-manage"))
 
 
 const startApp = async() => {

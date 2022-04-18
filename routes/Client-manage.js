@@ -39,9 +39,10 @@ router.post("/add-client" , async(req,res)=>{
             res.json({msg:"Completed"})
         }
     })
-    
-    })
 
+})
+
+    // console.log(req)
 
 
 
