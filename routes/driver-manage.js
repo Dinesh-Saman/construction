@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 const DriverSchema = require("../models/Driver")
 
+const { route } = require('./driver-manage')
+
 router.get("/get-drivers", async(req, res) => {
     let drivers = DriverSchema.find({}, function(err, drivers) {
         if (err) {
@@ -83,9 +85,37 @@ router.route("/update-driver/:id").put(async(req, res) => {
 })
 
 router.route("/delete-driver/:id").delete(async(req, res) => {
+        const update = await DriverSchema.findByIdAndUpdate(driver_id, updateDriver)
+            .then(() => {
+                res.status(200).send({ status: "Driver updated..." })
+            }).catch((err) => {
+                console.log(err);
+                res.status(500).send({ status: "Error with updating data", error: err.message });
+            })
+    })
+    /* 
+    router.route("/delete-driver/:id").delete(async (req,res)=>{
+        let driver_id = req.params.id;
+
+        await DriverSchema.findByIdAndDelete(driver_id)
+            .then(() => {
+                res.status(200).send({
+                    status: "driver deleted"
+                });
+            }).catch((err) => {
+                console.log(err.message);
+                res.status(500).send({ status: "Error with delete driver", error: err.message });
+            })
+    })
+
+    */
+
+router.delete("/delete-driver/:id", async(req, res) => {
     let driver_id = req.params.id;
 
-    await DriverSchema.findByIdAndDelete(driver_id)
+    //console.log(driver_id)wwdd
+
+    await DriverSchema.deleteOne({ _id: driver_id })
         .then(() => {
             res.status(200).send({
                 status: "driver deleted"
@@ -98,20 +128,20 @@ router.route("/delete-driver/:id").delete(async(req, res) => {
 
 
 
-router.delete("/delete-driver/:id",async(req,res)=>{
+router.delete("/delete-driver/:id", async(req, res) => {
     let driver_id = req.params.id;
 
     //console.log(driver_id)wwdd
 
-    await DriverSchema.deleteOne({_id:driver_id})
-    .then(()=>{
-        res.status(200).send({
-            status:"driver deleted"
-        });
-    }).catch((err)=>{
-        console.log(err.message);
-        res.status(500).send({status:"Error with delete driver",error :err.message});
-    })
+    await DriverSchema.deleteOne({ _id: driver_id })
+        .then(() => {
+            res.status(200).send({
+                status: "driver deleted"
+            });
+        }).catch((err) => {
+            console.log(err.message);
+            res.status(500).send({ status: "Error with delete driver", error: err.message });
+        })
 })
 
 module.exports = router;

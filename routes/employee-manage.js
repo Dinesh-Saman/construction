@@ -1,4 +1,5 @@
 const express = require('express')
+const { default: mongoose } = require('mongoose')
 const router = express.Router()
 const EmploeeSchema = require("../models/Employee")
 
@@ -42,8 +43,8 @@ var newEmployee = new EmploeeSchema({
     emp_join_date:emp_join_date,
     emp_cv:emp_cv,
     emp_type:emp_type,
-    dept_id:dept_id,
-    emp_account_id:emp_account_id
+    dept_id:mongoose.Types.ObjectId(dept_id),
+    emp_account_id:mongoose.Types.ObjectId(emp_account_id)
 
 })
 
