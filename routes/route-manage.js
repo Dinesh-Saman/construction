@@ -4,11 +4,11 @@ const RouteSchema  = require("../models/Route")
 const { route } = require('./route-manage')
 
 router.get("/get-routes" , async(req,res)=>{
-    let routes = RouteSchema.find({} , function(err , routes){
+    let routes = RouteSchema.find({} , function(err , result){
         if(err){
             res.json({msg:err})
         }else{
-            res.json({routes})
+            res.json({result})
         }
     })
 })
