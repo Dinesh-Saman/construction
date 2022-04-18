@@ -1,4 +1,4 @@
-const mongoose= require("mongoose");
+const mongoose = require("mongoose");
 
 const ProjectSchema = new mongoose.Schema({
 
@@ -22,10 +22,10 @@ const ProjectSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    client_id: {
+    /*client_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Client",
-    },
+    },*/
 
 
 })

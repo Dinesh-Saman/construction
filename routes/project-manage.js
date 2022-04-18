@@ -23,7 +23,7 @@ router.post("/create-project", async(req, res) => {
     let status = req.body.status;
     let location = req.body.location;
     let desc = req.body.description;
-    let clientid = req.body.client_id;
+    //let clientid = req.body.client_id;
 
     let client = mongoose.Types.ObjectId(clientid)
 
@@ -33,7 +33,7 @@ router.post("/create-project", async(req, res) => {
         status,
         location,
         description: desc,
-        client_id: client
+        //client_id: client
     })
 
     newProject.save(function(err, result) {
@@ -59,7 +59,7 @@ router.route("/update-project/:id").put(async(req, res) => {
         status,
         location,
         description,
-        client_id,
+        //client_id,
     } = req.body;
 
     const updateProject = {
@@ -68,7 +68,7 @@ router.route("/update-project/:id").put(async(req, res) => {
         status,
         location,
         description,
-        client_id,
+        //client_id,
     }
 
     const update = await ProjectSchema.findByIdAndUpdate(project_id, updateProject)
