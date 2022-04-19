@@ -4,11 +4,11 @@ const router = express.Router()
 const EmploeeSchema = require("../models/Employee")
 
 router.get("/get-employees" , async(req,res)=>{
-    let employees = EmploeeSchema.find({} , function(err , employees){
+    let employees = EmploeeSchema.find({} , function(err , result){
         if(err){
             res.json({msg:err})
         }else{
-            res.json({employees})
+            res.json({result})
         }
     })
 })
