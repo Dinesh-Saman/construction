@@ -19,4 +19,4 @@ const EngineerSchema = new mongoose.Schema({
     
 })
 
-module.exports = mongoose.Schema("Engineer" , EngineerSchema)
+module.exports = mongoose.model("Engineer" , EngineerSchema)
