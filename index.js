@@ -12,7 +12,6 @@ app.use(cors())
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: false }))
 
-<<<<<<< HEAD
 app.use("/api/employee-manage" , require("./routes/employee-manage"))
 app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
 app.use("/api/attandance-manage" , require("./routes/attandance-manage"))
@@ -24,12 +23,10 @@ app.use("/api/duty_duration-manage" , require("./routes/duty_duration-manage"))
 app.use("/api/leave-manage" , require("./routes/leave-manage"))
 app.use("/api/payroll-manage" , require("./routes/payroll-manage"))
 
-=======
 app.use("/api/employee-manage", require("./routes/employee-manage"))
 app.use("/api/vehicle-manage", require("./routes/vehicle-manage"))
 app.use("/api/attandance-manage", require("./routes/attandance-manage"))
 app.use("/api/salary-manage", require("./routes/salary-manage"))
->>>>>>> fd1103e509caa6fa2b0465d0dc548e4be3afa0db
 
 app.use("/api/item-manage", require("./routes/item-manage"))
 app.use("/api/request-manage", require("./routes/request-manage"))
@@ -82,6 +79,7 @@ app.use("/api/client-manage", require("./routes/Client-manage"))
 
 //app.use("/api/engineer-manage", require("./routes/engineer-manage"))
 app.use("/api/employee-manage", require("./routes/employee-manage"))
+app.use("/api/appointment-manage", require("./routes/appointment-manage"))
 app.use("/api/vehicle-manage", require("./routes/vehicle-manage"))
 app.use("/api/attandance-manage", require("./routes/attandance-manage"))
 app.use("/api/salary-manage", require("./routes/salary-manage"))

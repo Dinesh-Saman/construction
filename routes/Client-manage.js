@@ -23,7 +23,6 @@ router.post("/add-client", async(req, res) => {
     let proj_id = req.body.proj_id;
 
     let newClient = ClientSchema({
-<<<<<<< HEAD
         first_name:first_name,
         last_name:last_name,
         address:address,
@@ -31,14 +30,6 @@ router.post("/add-client", async(req, res) => {
         email:email,
         nic_no:nic_no,
         proj_id:proj_id
-=======
-        first_name: fName,
-        last_name: lName,
-        address,
-        contact_no,
-        email,
-        nic_no: nic
->>>>>>> fd1103e509caa6fa2b0465d0dc548e4be3afa0db
     })
 
     newClient.save(function(err,result){
@@ -48,14 +39,9 @@ router.post("/add-client", async(req, res) => {
             res.json({msg:"Completed"})
         }
     })
-<<<<<<< HEAD
     
     })
 
-=======
-
-    // console.log(req)
->>>>>>> fd1103e509caa6fa2b0465d0dc548e4be3afa0db
 
 
 
