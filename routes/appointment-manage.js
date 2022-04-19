@@ -14,25 +14,23 @@ router.get("/get-Appointment" , async(req,res)=>{
 
 router.post("/add-Appointment", async(req, res) => {
     // console.log(req.body)
-    let first_name = req.body.first_name;
-    let last_name = req.body.last_name;
-    let address = req.body.address;
-    let contact_no = req.body.contact_no;
-    let email = req.body.email;
-    let nic_no = req.body.nic_no;
-    let proj_id = req.body.proj_id;
+    let cons_location = req.body.cons_location;
+    let cons_type = req.body.cons_type;
+    let start_date = req.body.start_date;
+    let end_date = req.body.end_date;
+    let comments = req.body.comments;
+    let client_id = req.body.client_id;
 
-    let newClient = ClientSchema({
-        first_name:first_name,
-        last_name:last_name,
-        address:address,
-        contact_no,
-        email:email,
-        nic_no:nic_no,
-        proj_id:proj_id
+    let newAppointment = AppointmentSchema({
+        cons_location:cons_location,
+        cons_type:cons_type,
+        start_date:start_date,
+        end_date:end_date,
+        comments:comments,
+        client_id:client_id,
     })
 
-    newClient.save(function(err,result){
+    newAppointment.save(function(err,result){
         if(err){
             res.json({msg:err})
         }else{
