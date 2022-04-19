@@ -4,11 +4,11 @@ const router = express.Router()
 const ProjectSchema = require("../models/Project")
 
 router.get("/get-projects", async(req, res) => {
-    let projects = ProjectSchema.find({}, function(err, projects) {
+    let projects = ProjectSchema.find({}, function(err, result) {
         if (err) {
             res.json({ msg: err })
         } else {
-            res.json({ projects })
+            res.json({ result })
         }
     })
 })

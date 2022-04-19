@@ -21,10 +21,10 @@ router.post("/add-suppliers" , async(req,res)=>{
     // // console.log(req.body)
     var supplier_name = req.body.supplier_name;
     var contact_name = req.body.contact_name;
-    var nic = req.body.nic;
+    var nic = req.body.supplier_nic;
     var supplier_address = req.body.supplier_address;
-    var phone_no = req.body.phone_no;
-    var email = req.body.email;
+    var phone_no = req.body.supplier_phone;
+    var email = req.body.supplier_email;
 
     var newSupplier = new SupplierSchema({
         supplier_name:supplier_name,
