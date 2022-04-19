@@ -53,6 +53,7 @@ app.use("/api/engineer-manage", require("./routes/engineer-manage"))
 
 
 
+<<<<<<< HEAD
 app.use("/api/employee-manage", require("./routes/employee-manage"))
 app.use("/api/vehicle-manage", require("./routes/vehicle-manage"))
 app.use("/api/attandance-manage", require("./routes/attandance-manage"))
@@ -108,6 +109,8 @@ app.use("/api/engineer-manage", require("./routes/engineer-manage"))
 app.use("/api/bankaccount-manage", require("./routes/bankaccount-manage"))
 app.use("/api/department-manage", require("./routes/department-manage"))
 
+=======
+>>>>>>> b9fae3b4ef2e01987eb3340c9826e02923962746
 
 const startApp = async() => {
     try {
