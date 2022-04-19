@@ -25,7 +25,7 @@ router.post("/create-project", async(req, res) => {
     let desc = req.body.description;
     //let clientid = req.body.client_id;
 
-    let client = mongoose.Types.ObjectId(clientid)
+    //let client = mongoose.Types.ObjectId(clientid)
 
     let newProject = ProjectSchema({
         proj_name: proName,
