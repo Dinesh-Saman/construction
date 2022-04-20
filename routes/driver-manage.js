@@ -1,18 +1,17 @@
 const express = require('express')
 const router = express.Router()
 const DriverSchema  = require("../models/Driver")
-const { route } = require('./driver-manage')
+const { driver } = require('./driver-manage')
 
 router.get("/get-drivers" , async(req,res)=>{
-    let drivers = DriverSchema.find({} , function(err , drivers){
+    let drivers = DriverSchema.find({} , function(err , result){
         if(err){
             res.json({msg:err})
         }else{
-            res.json({drivers})
+            res.json({result})
         }
     })
 })
-
 router.route("/add-driver").post((req,res)=>{
     const dri_name = req.body.dri_name;
     const dri_nic = req.body.dri_nic;
@@ -25,7 +24,7 @@ router.route("/add-driver").post((req,res)=>{
     const dri_licenvalidity = req.body.dri_licenvalidity;
     const dri_issuedate = req.body.dri_issuedate;
 
-    const newRoute = new DriverSchema({
+    const newDriver = new DriverSchema({
         dri_name,
         dri_nic,
         dri_address,
@@ -38,12 +37,13 @@ router.route("/add-driver").post((req,res)=>{
         dri_issuedate,
     })
 
-    newRoute.save().then(()=>{
+    newDriver.save().then(()=>{
         res.json("Driver Added")
     }).catch((err)=>{
         console.log(err);
     })
 })
+
 
 
 router.route("/update-driver/:id").put(async (req, res) => {

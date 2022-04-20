@@ -25,7 +25,7 @@ const FuelSchema = new mongoose.Schema({
     veh_make:{
         type:String,
         required:true,
-        unique:true
+
     },
     veh_model:{
         type:String,

@@ -3,11 +3,11 @@ const router = express.Router()
 const ServiceSchema  = require("../models/Service")
 
 router.get("/get-services" , async(req,res)=>{
-    let services = ServiceSchema.find({} , function(err , services){
+    let services = ServiceSchema.find({} , function(err , result){
         if(err){
             res.json({msg:err})
         }else{
-            res.json({services})
+            res.json({result})
         }
     })
 })

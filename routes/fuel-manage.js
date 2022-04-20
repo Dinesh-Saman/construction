@@ -3,11 +3,11 @@ const router = express.Router()
 const FuelSchema  = require("../models/Fuel")
 
 router.get("/get-fuels" , async(req,res)=>{
-    let fuels = FuelSchema.find({} , function(err , fuels){
+    let fuels = FuelSchema.find({} , function(err , result){
         if(err){
             res.json({msg:err})
         }else{
-            res.json({fuels})
+            res.json({result})
         }
     })
 })

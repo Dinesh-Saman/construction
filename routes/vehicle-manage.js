@@ -4,11 +4,11 @@ const router = express.Router()
 const VehicleSchema  = require("../models/Vehicle")
 
 router.get("/get-vehicles" , async(req,res)=>{
-    let vehicles = VehicleSchema.find({} , function(err , vehicles){
+    let vehicles = VehicleSchema.find({} , function(err , result){
         if(err){
             res.json({msg:err})
         }else{
-            res.json({vehicles})
+            res.json({result})
         }
     })
 })

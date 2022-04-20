@@ -3,11 +3,11 @@ const router = express.Router()
 const EquipmentSchema  = require("../models/Equipment")
 
 router.get("/get-equipments" , async(req,res)=>{
-    let equipments = EquipmentSchema.find({} , function(err , equipments){
+    let equipments = EquipmentSchema.find({} , function(err , result){
         if(err){
             res.json({msg:err})
         }else{
-            res.json({equipments})
+            res.json({result})
         }
     })
 })

@@ -3,11 +3,11 @@ const router = express.Router()
 const ConsignmentSchema  = require("../models/Consignment")
 
 router.get("/get-consignments" , async(req,res)=>{
-    let consignments = ConsignmentSchema.find({} , function(err , consignments){
+    let consignments = ConsignmentSchema.find({} , function(err , result){
         if(err){
             res.json({msg:err})
         }else{
-            res.json({consignments})
+            res.json({result})
         }
     })
 })

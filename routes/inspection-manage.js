@@ -3,11 +3,11 @@ const router = express.Router()
 const InspectionSchema  = require("../models/Vehicle_Inspection")
 
 router.get("/get-inspections" , async(req,res)=>{
-    let inspections = InspectionSchema.find({} , function(err , inspections){
+    let inspections = InspectionSchema.find({} , function(err , result){
         if(err){
             res.json({msg:err})
         }else{
-            res.json({inspections})
+            res.json({result})
         }
     })
 })
@@ -21,7 +21,7 @@ router.route("/add-inspection").post((req,res)=>{
     const owner_name = req.body.owner_name;
     const status = req.body.status;
  
-    const newRoute = new InspectionSchema({
+    const newInspection = new InspectionSchema({
 
         inspection_date,
         veh_no,
@@ -33,7 +33,7 @@ router.route("/add-inspection").post((req,res)=>{
         
     })
 
-    newRoute.save().then(()=>{
+    newInspection.save().then(()=>{
         res.json("Inspection Added")
     }).catch((err)=>{
         console.log(err);
@@ -43,37 +43,23 @@ router.route("/add-inspection").post((req,res)=>{
 router.route("/update-inspection/:id").put(async (req, res) => {
     let inspection_id = req.params.id;
     const {
-        fuel_lastdate,
-        fuel_type,
+        inspection_date,
         veh_no,
-        veh_year,
+        veh_type,
         veh_make,
         veh_model,
-        quentity,
-        amount,
-        old_reading,
-        new_reading,
-        usage,
-        dri_name,
-        total_capacity,
-        fuel_cost,
+        owner_name,
+        status,
     } = req.body;
 
     const updateInspection = {
-        fuel_lastdate,
-        fuel_type,
+        inspection_date,
         veh_no,
-        veh_year,
+        veh_type,
         veh_make,
         veh_model,
-        quentity,
-        amount,
-        old_reading,
-        new_reading,
-        usage,
-        dri_name,
-        total_capacity,
-        fuel_cost,
+        owner_name,
+        status,
     }
 
     const update = await InspectionSchema.findByIdAndUpdate(inspection_id ,updateInspection)

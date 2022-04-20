@@ -3,11 +3,11 @@ const router = express.Router()
 const InquirySchema  = require("../models/Vehicle_Inquiry")
 
 router.get("/get-inquiries" , async(req,res)=>{
-    let inquiries = InquirySchema.find({} , function(err , inquiries){
+    let inquiries = InquirySchema.find({} , function(err , result){
         if(err){
             res.json({msg:err})
         }else{
-            res.json({inquiries})
+            res.json({result})
         }
     })
 })
