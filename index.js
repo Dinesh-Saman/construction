@@ -10,7 +10,7 @@ const app = express()
 
 app.use(cors())
 app.use(bodyparser.urlencoded({ extended: false }))
-// app.use(bodyparser.json())
+app.use(bodyparser.json())
 
 app.use("/api/employee-manage" , require("./routes/employee-manage"))
 app.use("/api/vehicle-manage" , require("./routes/vehicle-manage"))
@@ -38,6 +38,9 @@ app.use("/api/client-manage" , require("./routes/Client-manage"))
 app.use("/api/engineer-manage" , require("./routes/engineer-manage"))
 app.use("/api/bankaccount-manage" , require("./routes/bankaccount-manage"))
 app.use("/api/department-manage" , require("./routes/department-manage"))
+
+
+// app.use("/api/auth" , require("./routes/auth"))
 
 
 const startApp = async() => {

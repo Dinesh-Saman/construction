@@ -17,6 +17,6 @@ const EngineerSchema = new mongoose.Schema({
         ref:"Project"
     }
     
-})
+},{strictPopulate:false})
 
 module.exports = mongoose.model("Engineer" , EngineerSchema)

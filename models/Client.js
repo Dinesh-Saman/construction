@@ -34,11 +34,11 @@ const ClientSchema = new mongoose.Schema({
     //     unique: true,
     //     required: true
     // },
-    // proj_id: {
-    //     type: String,
-    //     unique: true,
-    //     required: true
-    // },
+    proj_id: {
+        type: String,
+        unique: true,
+        required: true
+    },
 
 
 })
