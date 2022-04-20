@@ -4,14 +4,18 @@ const router = express.Router()
 const EmploeeSchema = require("../models/Employee")
 
 router.get("/get-employees" , async(req,res)=>{
-    let employees = EmploeeSchema.find({} , function(err , result){
-        if(err){
-            res.json({msg:err})
-        }else{
-            res.json({result})
-        }
-    })
+    // let employees = EmploeeSchema.find({} , function(err , result){
+    //     if(err){
+    //         res.json({msg:err})
+    //     }else{
+    //         res.json({result})
+    //     }
+    // })
+    let employees = await EmploeeSchema.find({}).populate('dept_id').populate('emp_account_id')
+    res.json({employees})
 })
+
+
 
 router.post("/add-employee" , async(req,res)=>{
 //   console.log(req.body)
