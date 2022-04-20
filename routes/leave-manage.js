@@ -10,6 +10,9 @@ router.get("/get-Leave" , async(req,res)=>{
             res.json({Leave})
         }
     })
+  //  let Leave = await LeaveSchema.find({}).populate('dept_id').populate('emp_id')
+  //  res.json({Leave})
+
 })
 router.post("/add-Leave" , async(req,res)=>{
     // console.log(req.body)  

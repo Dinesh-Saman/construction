@@ -40,6 +40,7 @@ app.use("/api/bankaccount-manage" , require("./routes/bankaccount-manage"))
 app.use("/api/department-manage" , require("./routes/department-manage"))
 app.use("/api/Position-manage" , require("./routes/Position-manage"))
 app.use("/api/duty_duration-manage" , require("./routes/duty_duration-manage"))
+app.use("/api/leave-manage" , require("./routes/leave-manage"))
 
 
 const startApp = async() => {
