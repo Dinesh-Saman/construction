@@ -19,7 +19,7 @@ app.use("/api/attandance-manage" , require("./routes/attandance-manage"))
 app.use("/api/salary-manage" , require("./routes/salary-manage"))
 app.use("/api/item-manage" , require("./routes/item-manage"))
 app.use("/api/request-manage" , require("./routes/request-manage"))
-app.use("/api/employee-manage", require("./routes/employee-manage"))
+//app.use("/api/employee-manage", require("./routes/employee-manage"))
 app.use("/api/project-manage", require("./routes/project-manage"))
 app.use("/api/supplier-manage" , require("./routes/supplier-manage"))
 app.use("/api/purchase-manage" , require("./routes/purchase-manage"))
@@ -39,6 +39,8 @@ app.use("/api/client-manage" , require("./routes/Client-manage"))
 app.use("/api/engineer-manage" , require("./routes/engineer-manage"))
 app.use("/api/bankaccount-manage" , require("./routes/bankaccount-manage"))
 app.use("/api/department-manage" , require("./routes/department-manage"))
+app.use("/api/Position-manage" , require("./routes/Position-manage"))
+app.use("/api/duty_duration-manage" , require("./routes/duty_duration-manage"))
 
 
 const startApp = async() => {

@@ -22,13 +22,13 @@ const PurchaseSchema = new mongoose.Schema({
         required: true,
     },
 
-    supplier: {
+    sup_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Supplier",
         // required: true,
     },
 
-    item: {
+    item_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Item",
         // required: true,

@@ -5,13 +5,15 @@ const PurchaseSchema = require("../models/Purchase")
 
 
 router.get("/get-purchases" , async(req,res)=>{
-    let purchases = PurchaseSchema.find({} , function(err , purchases){
-        if(err){
-            res.json({msg:err})
-        }else{
-            res.json({purchases})
-        }
-    })
+    // let purchases = PurchaseSchema.find({} , function(err , purchases){
+    //     if(err){
+    //         res.json({msg:err})
+    //     }else{
+    //         res.json({purchases})
+    //     }
+    // })
+    let purchases = await PurchaseSchema.find({}).populate("sup_id").execPopulate()
+    res.json({purchases})
 })
 
 router.post("/add-purchases" , async(req,res)=>{

@@ -44,7 +44,6 @@ const EmployeeSchema = new mongoose.Schema({
     },
     emp_join_date:{
         type:Date,
-        default:Date.now(),
         require:true,
     },
     emp_cv:{
