@@ -1,0 +1,34 @@
+GET http://localhost:3001/api/engineer-manage/get-engineers
+
+###
+
+GET http://localhost:3001/api/project-manage/get-projects
+
+###
+
+GET http://localhost:3001/api/supplier-manage/get-suppliers
+
+###
+
+GET http://localhost:3001/api/purchase-manage/get-purchases
+
+###
+
+GET http://localhost:3001/api/inventory-manage/get-items
+
+###
+
+POST http://localhost:3001/api/supplier-manage/add-suppliers
+
+###
+
+POST http://localhost:3001/api/engineer-manage/add-engineer HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Accept: application/json
+
+{
+    "emp_id": "asjdasdh2323847234",
+    "status":"ONGOING",
+    "description":"THis is new project",
+    "project_id":"62578612fc86c5d586232d29"
+}   
